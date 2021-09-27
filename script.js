@@ -13,19 +13,19 @@ return Math.floor((Math.random() * 3) + 1);
 let getChoice = prompt("Enter: R, P, or S to play!").toLowerCase();
     if(getChoice === "r"){
         getChoice = 1;
-        console.log(getChoice);
+    }
+    else if(getChoice === "p"){
+        getChoice = 2;
+    }
+    else if(getChoice === "s"){
+        getChoice =3;
     }
     else{
         alert("Enter only R,P, or S!");
     }
 
-  function convertChoice(){
-      if(getChoice === "r"){
-          getChoice.charCodeAt(0);
-      }
-      else if(getChoice === "p"){
-          
-      }
-  }
+
+const playerChoice = getChoice;
+const computerChoice = computerPlay();
 
 console.log("Hello Person!");
