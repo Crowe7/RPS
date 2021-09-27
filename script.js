@@ -31,12 +31,16 @@ function playerPlay() {
         }
         else{
             alert("Enter only Rock, Paper, or Scissors!");
+            getChoice = null;
         }
 }
 function computerPlay() {
     return Math.floor((Math.random() * 3) + 1);
 }
-         if(computerChoice === 1){
+        if(getChoice === null){
+            
+        }
+        else if(computerChoice === 1){
             console.log("Computer used rock!");
         }
         else if(computerChoice === 2){
@@ -44,7 +48,7 @@ function computerPlay() {
         }
         else if(computerChoice === 3){
             console.log("Computer used scissors!");
-        }
+        }      
         else{
             console.log("error");
             console.log(computerChoice);
@@ -67,6 +71,9 @@ function computerPlay() {
         else if(getChoice === 3 && computerChoice === 1){
             cpuGame++
             console.log("Computer wins this round!");
+        }
+        else if(getChoice === null){
+            console.log("nobody wins :(");
         }
         else{
             playerGame++
