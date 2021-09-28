@@ -35,6 +35,7 @@ function playerPlay() {
         }
         else{
             alert("Enter only Rock, Paper, or Scissors!");
+            playerPlay();
         }
 }
 function computerPlay() {
@@ -56,10 +57,10 @@ function computerPlay() {
             console.log("error");
             console.log(computerChoice);
         }
-    
 
 
-    function playSet(getChoice, computerChoice){
+
+    function playSet(){
         if (getChoice === computerChoice){
             console.log("Tie!");
         }
@@ -84,8 +85,22 @@ function computerPlay() {
 
         }
     }
-console.log("Hello Person!");
 
+function set(){
+    for (let i = 0; i < 5; i++){
 
-playSet(getChoice, computerChoice);
+            if(playerGame === 5){
+                alert('You win!');
+                break;
+            }
+            else if(cpuGame === 5){
+                alert("Computer wins!");
+                break;
+            }
+            else{
 
+            }
+console.log(getChoice);
+        }
+    }
+playSet();
