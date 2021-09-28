@@ -10,15 +10,16 @@
 
 
 // get player choice that we will convert to a int to compare with computer
+let getChoice = 0;
 let cpuGame = 0;
-let playerGame = 0;
-let getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
-while(getChoice === null){
-    getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
-}
+let playerGame = 0;    
 const playerChoice = playerPlay();
 const computerChoice = computerPlay(); 
 function playerPlay() {
+    getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
+         while(getChoice === null){
+            getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
+    }
     getChoice.toLowerCase();
         if(getChoice === "rock"){
             console.log(`You used ${getChoice}!`);
@@ -83,8 +84,8 @@ function computerPlay() {
 
         }
     }
-playSet(getChoice, computerChoice);
 console.log("Hello Person!");
 
 
+playSet(getChoice, computerChoice);
 
