@@ -1,20 +1,9 @@
-// Write a function that chooses between the three values at random
-//prompt user to input one of the values, make sure it is only rock, paper, or scissors
-// write second function that plays the game and prints the winner
-// write a third functioin that keeps score of a first of 5 set 
-//maybe use ifs in the third function that ends if either score hits 5 points
-// print set winner
-
-//randomly generate 1-3 for computer play
-
-
-
-// get player choice that we will convert to a int to compare with computer
+//set all variables
 let getChoice = 0;
 let cpuGame = 0;
 let playerGame = 0;    
-const playerChoice = playerPlay();
-const computerChoice = computerPlay(); 
+let computerChoice = 0;
+// gets player input and prints it
 function playerPlay() {
     getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
          while(getChoice === null){
@@ -38,11 +27,14 @@ function playerPlay() {
             playerPlay();
         }
 }
+//generates the input from the computer
 function computerPlay() {
     return Math.floor((Math.random() * 3) + 1);
 }
+//prints result of what computer used 
+function computerSay(){
         if(getChoice === null){
-            
+
         }
         else if(computerChoice === 1){
             console.log("Computer used rock!");
@@ -54,15 +46,18 @@ function computerPlay() {
             console.log("Computer used scissors!");
         }      
         else{
-            console.log("error");
-            console.log(computerChoice);
+            computerSay();
         }
+        
+    }
 
-
-
+//plays a round and increments the winners game count 
     function playSet(){
+        playerPlay();
+        computerSay();
         if (getChoice === computerChoice){
             console.log("Tie!");
+            playSet();
         }
         else if(getChoice === 1 && computerChoice === 2){
             cpuGame++
@@ -85,10 +80,11 @@ function computerPlay() {
 
         }
     }
-
+//plays the full best of 5 set by setting the cpu each time with computer choice, then when either player hits 5 games won stops the loop
 function set(){
-    for (let i = 0; i < 5; i++){
-
+    for (let i = 0; i < 9; i++){
+        computerChoice = computerPlay();
+        playSet();
             if(playerGame === 5){
                 alert('You win!');
                 break;
@@ -100,7 +96,6 @@ function set(){
             else{
 
             }
-console.log(getChoice);
         }
     }
-playSet();
+set();
