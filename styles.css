@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+}
+header{
+    width: 100%;
+}
+.headerBar {
+    background-color: slategrey;
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+    align-items: center;
+}
+.headerRPS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerRPS a {
+    text-decoration: none;
+    color: rgb(26, 58, 83);
+}
+
+p{
+    padding-left: 50px;
+    padding-right: 50px;
+}
