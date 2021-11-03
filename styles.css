@@ -20,7 +20,7 @@ header{
     align-items: center;
 }
 .headerBar p {
-    padding: 50px;
+    padding: 50px 50px 70px;
     border-right: 2px black solid;
     border-left: 2px black solid;
 }
@@ -34,7 +34,6 @@ header{
     color: rgb(26, 58, 83);
 }
 
-
 .goeshard {
     width: 100%;
     display: block;
@@ -42,4 +41,17 @@ header{
     margin-left: auto;
     margin-right: auto;
 
+}
+.pScore, .cScore {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.headerBar h2 {
+    font-size: 45px;
+    position: absolute;
+    top: 70px;
+    padding-bottom: 10px;
 }
