@@ -31,6 +31,11 @@ header{
     justify-content: center;
     align-items: center;
 }
+.headerRPS:hover{
+    border: 2px thistle solid;
+    padding: 7px;
+    background-color: #5C80BC;
+}
 .headerRPS a {
     text-decoration: none;
     color: white;
@@ -38,7 +43,7 @@ header{
 .goeshard {
     width: 100%;
     display: block;
-    height: 2px;
+    height: 1px;
     margin-left: auto;
     margin-right: auto;
 
@@ -62,12 +67,32 @@ header{
     align-items: center;
     flex-grow: 1;
     background-color: #4D5061;
+    text-align: center;
 }
-
 .rock, .paper, .scissors {
     display: flex;
     flex-direction: column;
+    padding: 150px 100px;
+    border: 3px #30323D solid;
+    background-color: #5C80BC;
 }
+.scissors{
+    padding: 150px 83px !important;
+}
+.scissors p{
+    margin-left: 30px !important;
+}
+.rps-selection p{
+    margin-left: 14px;
+}
+button{
+    border: none;
+    text-decoration: none;
+    background-color: inherit;
+    font-size: 100px;
+    cursor: pointer;
+}
+
 .footer{
     display: flex;
     justify-content: center;
