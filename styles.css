@@ -48,13 +48,22 @@ header{
     margin-right: auto;
 
 }
+.winner{
+    display: flex;
+    justify-content: center;
+    background-color: #4D5061;
+    font-size: 40px;
+    padding-top: 30px;
+}
 .pScore, .cScore {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 }
-
+.pScore{
+    padding-right: 30px;
+}
 .headerBar h2 {
     font-size: 45px;
     position: absolute;
@@ -68,6 +77,7 @@ header{
     flex-grow: 1;
     background-color: #4D5061;
     text-align: center;
+    padding-bottom: 200px;
 }
 .rock, .paper, .scissors {
     display: flex;
@@ -75,9 +85,7 @@ header{
     border: 3px #30323D solid;
     background-color: #5C80BC;
 }
-.scissors button{
-    padding: 150px 83px !important;
-}
+
 
 button{
     border: none;
@@ -122,3 +130,40 @@ button{
     flex-direction: column;
     min-height: 100vh;
 }
+@media (max-width: 600px) {
+    .headerBar{
+        padding-bottom: 30px;
+    }
+    .headerBar h2{
+        font-size: 30px;
+        top: 35px;
+        padding-top: 15px;
+    }
+    .headerBar p{
+        font-size: 15px;
+        white-space: nowrap;
+        padding: 10px;
+    }
+    .headerBar h1{
+        font-size: 20px;
+        white-space: nowrap;
+        padding: 7px;
+        margin-right: 25px;
+    }
+    .headerRPS{
+        border: 2px thistle solid;
+        padding: 7px;
+        background-color: #5C80BC;
+    }
+    .winner{
+        font-size: 20px;
+        
+    }
+    button{
+        padding: 20px;
+    }
+    .footer i{
+        font-size: 38px;
+        padding-left: 15px;
+    }
+  }
