@@ -72,25 +72,20 @@ header{
 .rock, .paper, .scissors {
     display: flex;
     flex-direction: column;
-    padding: 150px 100px;
     border: 3px #30323D solid;
     background-color: #5C80BC;
 }
-.scissors{
+.scissors button{
     padding: 150px 83px !important;
 }
-.scissors p{
-    margin-left: 30px !important;
-}
-.rps-selection p{
-    margin-left: 14px;
-}
+
 button{
     border: none;
     text-decoration: none;
     background-color: inherit;
     font-size: 100px;
     cursor: pointer;
+    padding: 150px 100px;
 }
 
 .footer{
