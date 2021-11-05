@@ -64,6 +64,12 @@ header{
 .pScore{
     padding-right: 30px;
 }
+.pScore h2{
+    left: 92px;
+}
+.cScore h2{
+    right: 122px;
+}
 .headerBar h2 {
     font-size: 45px;
     position: absolute;
@@ -85,8 +91,9 @@ header{
     border: 3px #30323D solid;
     background-color: #5C80BC;
 }
-
-
+.hidden {
+    visibility: hidden;
+}
 button{
     border: none;
     text-decoration: none;
@@ -167,3 +174,4 @@ button{
         padding-left: 15px;
     }
   }
+
