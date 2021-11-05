@@ -83,7 +83,7 @@ function computerSay(){
                 removeRPS();
             }
             else if(cCount === 5) {
-                document.getElementById("winnerText").textContent = "COMPUTER ARE WINNER"
+                document.getElementById("winnerText").textContent = "COMPUTER ARE WINNER!"
                 removeRPS();
             }
         }
