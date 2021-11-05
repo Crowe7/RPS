@@ -3,99 +3,100 @@ let getChoice = 0;
 let cpuGame = 0;
 let playerGame = 0;    
 let computerChoice = 0;
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+let pCount = parseInt(document.getElementById("pScoreResult").textContent);
+let cCount = parseInt(document.getElementById("cScoreResult").textContent);
+rock.addEventListener('click', playSet.bind(this , 1));
+paper.addEventListener('click', playSet.bind(this, 2));
+scissors.addEventListener('click', playSet.bind(this, 3));
+
+
 // gets player input and prints it
-function playerPlay() {
-    getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
-         while(getChoice === null){
-            getChoice = prompt("Enter: Rock, Paper, or Scissors to play!");
-    }
-    getChoice.toLowerCase();
-        if(getChoice === "rock"){
-            console.log(`You used ${getChoice}!`);
-            getChoice = 1;
+function playerPlay(pChoice) {
+    getChoice = pChoice
+        if(getChoice === 1){
+            document.getElementById("pResult").textContent = "You used Rock! \u00A0 \u00A0 \u00A0"
         }
-        else if(getChoice === "paper"){
-            console.log(`You used ${getChoice}!`);
-            getChoice = 2;
+        else if(getChoice === 2){
+            document.getElementById("pResult").textContent = "You used Paper! \u00A0 \u00A0"
         }
-        else if(getChoice === "scissors"){
-            console.log(`You used ${getChoice}!`);
-            getChoice = 3;
+        else if(getChoice === 3){
+            document.getElementById("pResult").textContent = "You used Scissors!"
         }
-        else{
-            alert("Enter only Rock, Paper, or Scissors!");
-            playerPlay();
-        }
-}
-//generates the input from the computer
-function computerPlay() {
-    return Math.floor((Math.random() * 3) + 1);
 }
 //prints result of what computer used 
 function computerSay(){
-        if(getChoice === null){
-
-        }
-        else if(computerChoice === 1){
-            console.log("Computer used rock!");
+      let  computerChoice = Math.floor((Math.random() * 3) + 1);
+        if(computerChoice === 1){
+            document.getElementById("cResult").textContent = "CPU used Rock! \u00A0 \u00A0 \u00A0"
+            return 1;
         }
         else if(computerChoice === 2){
-            console.log("Computer used paper!");
+            document.getElementById("cResult").textContent = "CPU used Paper! \u00A0 \u00A0"
+            return 2;
         }
         else if(computerChoice === 3){
-            console.log("Computer used scissors!");
+            document.getElementById("cResult").textContent = "CPU used Scissors!"
+            return 3;
         }      
-        else{
-            computerSay();
-        }
-        
     }
 
 //plays a round and increments the winners game count 
-    function playSet(){
-        playerPlay();
-        computerSay();
-        if (getChoice === computerChoice){
-            console.log("Tie!");
-            playSet();
+    function playSet(RPS){
+       let pChoice = RPS;
+       playerPlay(pChoice);
+       let cChoice = computerSay();
+      
+        if (pChoice === cChoice){
+            document.getElementById("winnerText").textContent = "This round is a draw.."
         }
-        else if(getChoice === 1 && computerChoice === 2){
-            cpuGame++
-            console.log("Computer wins this round!");
+        else if(pChoice === 1 && cChoice === 2){
+            cCount++
+            document.getElementById("cScoreResult").textContent = cCount
+            document.getElementById("winnerText").textContent = "Computer wins this round!"
         }
-        else if(getChoice === 2 && computerChoice === 3){
-            cpuGame++
-            console.log("Computer wins this round!");
+        else if(pChoice === 2 && cChoice === 3){
+            cCount++
+            document.getElementById("cScoreResult").textContent = cCount
+            document.getElementById("winnerText").textContent = "Computer wins this round!"
         }
-        else if(getChoice === 3 && computerChoice === 1){
-            cpuGame++
-            console.log("Computer wins this round!");
-        }
-        else if(getChoice === null){
-            console.log("nobody wins :(");
+        else if(pChoice === 3 && cChoice === 1){
+            cCount++
+            document.getElementById("cScoreResult").textContent = cCount
+            document.getElementById("winnerText").textContent = "Computer wins this round!"
         }
         else{
-            playerGame++
-            console.log("You win this round!");
-
+            pCount++
+            document.getElementById("pScoreResult").textContent = pCount
+            document.getElementById("winnerText").textContent = "You win this round!"
+        }
+        if(pCount === 5 || cCount === 5){
+            endSet();
         }
     }
-//plays the full best of 5 set by setting the cpu each time with computer choice, then when either player hits 5 games won stops the loop
-function set(){
-    for (let i = 0; i < 9; i++){
-        computerChoice = computerPlay();
-        playSet();
-            if(playerGame === 5){
-                alert('You win!');
-                break;
-            }
-            else if(cpuGame === 5){
-                alert("Computer wins!");
-                break;
-            }
-            else{
 
+    function endSet() {
+            if(pCount === 5) {
+                document.getElementById("winnerText").textContent = "YOU ARE WINNER!"
+                removeRPS();
+            }
+            else if(cCount === 5) {
+                document.getElementById("winnerText").textContent = "COMPUTER ARE WINNER!"
+                removeRPS();
             }
         }
+    
+    function removeRPS() {
+        rock.remove();
+        paper.remove();
+        scissors.remove();
+        let x = document.getElementsByClassName("hide");
+        let i = 0;
+        for(i = 0; i < x.length; i++){
+            x[i].classList.toggle('hidden');
+        }
+
     }
-set();
+  

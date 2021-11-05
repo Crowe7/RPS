@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/59c25cf535.js" crossorigin="anonymous"></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <p>I'll make this pretty later lmao</p> 
+    <header>
+        <div class="headerBar">
+            <div class="pScore">
+                <p id="pResult">Click on an icon to play!</p>
+                <h2 id="pScoreResult">0</h2>
+            </div>
+                <h1 class="headerRPS"><a href="index.html">Rock Paper <br>  Scissors!</a></h1>
+            <div class="cScore">
+                <p id="cResult">Click the name to restart!</p>
+                <h2 id="cScoreResult">0</h2>
+            </div>
+        </div> 
+    </header>
+<img class="goeshard" src=images/goeshard.png alt="This pic goes hard">
+<div class="winner">
+    <p id="winnerText">The game ends when either player reaches 5 wins!</p>
+</div>
+<div class="flex-wrapper">
+    <div class="rps-selection">
+        <div class="rock hide">
+            <button id="rock"><i class="far fa-hand-rock"></i></button>
+            <p></p>
+        </div>
+        <div class="paper hide">
+            <button id="paper"><i class="far fa-hand-paper"></i></button>
+            <p></p>
+        </div>
+        <div class="scissors hide">
+            <button id="scissors"><i class="far fa-hand-scissors"></i></button>
+            <p></p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Find more of me here maybe?<div class="rotate"><a href="https://github.com/Crowe7"><i class="fab fa-github"></i></a></div></p>
+    </footer>
+</div>
 </body>
+<script src="script.js"></script>
 </html>
+<!-- <i class="far fa-hand-rock"></i>--> 
+<!--<i class="far fa-hand-scissors"></i>-->
+<!--<i class="far fa-hand-paper"></i>-->
+<!-- change the far to fas for a solid icon-->
